@@ -1,0 +1,12 @@
+<div class="container">
+<h3>Bem vindo ao sistema de gestão de promoções</h3>
+<hr>
+<%= form_tag coupons_path, method: :get, class: "form-inline" do %>
+<div class="form-group">
+<%= label_tag :search, 'Digite o número do Cupom:' %>
+<%= text_field_tag :search, params[:search], class: "form-control" %>
+</div>
+<%= submit_tag 'Buscar Cupom', class: "btn btn-default" %>
+
+<% end %>
+</div>

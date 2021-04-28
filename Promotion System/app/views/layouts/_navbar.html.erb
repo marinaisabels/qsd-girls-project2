@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Promotion System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Promoções", promotions_path, method: :get %></li>
+      <li><%= link_to "Categorias de Produto", product_categories_path, method: :get %></li>
+      <li><%= link_to "Cupons", coupons_path, method: :get %></li>
+      <li><%= link_to "Login", new_user_session_path, method: :get %></li>
+      <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </div>
+</nav>
+
+

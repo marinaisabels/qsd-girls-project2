@@ -1,0 +1,30 @@
+<div class="container">
+<% if @promotion.errors.any? %>
+    <ul>
+        <% @promotion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <%end%>
+    </ul>
+<%end%>
+
+<div class="form-group">
+<%= form_with class: "form-horizontal", model: @promotion do |f|  %>
+<%= f.label :name, 'Nome' %>
+<%= f.text_field :name, class: "form-control" %>
+<%= f.label :description, 'Descrição' %>
+<%= f.text_field :description, class: "form-control" %>
+<%= f.label :code, 'Código' %>
+<%= f.text_field :code, class: "form-control" %>
+<%= f.label :discount_rate, 'Desconto' %>
+<%= f.text_field :discount_rate, class: "form-control" %>
+<%= f.label :coupon_quantity, 'Quantidade de cupons' %>
+<%= f.number_field :coupon_quantity, min: 0, setp: 1, class: "form-control" %>
+<%= f.label :expiration_date, 'Data de término' %>
+<%= f.date_field :expiration_date, class: "form-control" %>
+<br>
+<div class="container">
+<%= link_to 'Voltar', root_path, class: "btn btn-info" %>
+<%= f.submit 'Criar promoção', class: "btn btn-default" %>
+<% end %>
+</div>
+</div>

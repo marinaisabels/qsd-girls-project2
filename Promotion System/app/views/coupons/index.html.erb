@@ -1,0 +1,13 @@
+<div class="container">
+<h2><%= link_to 'Voltar', root_path, method: :get, class: "btn btn-info" %></h2>
+<hr>
+<% @coupons.each do |coupon| %>
+    <h3><%= link_to coupon.code, coupon %></h3>
+    <p><b>Número da Promoção:</b> <%= coupon.promotion_id %></p>
+    <p><b>Data de criação:</b> <%= coupon.created_at %></p>
+    <p><b>Número do pedido:</b> <%= coupon.order %></p>
+<% end %>
+
+<h3> <%= link_to 'Emita um novo cupom',  promotions_path, class: "btn btn-primary" %> </h3>
+<hr>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+<h2><%= link_to 'Voltar', promotions_path, class: "btn btn-info" %></h2>
+<hr>
+<h1><%= @promotion.name %></h1>
+<p><b>Descrição da Promoção:</b> <%= @promotion.description %></p>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Desconto </th>
+      <th scope="col">Código</th>
+      <th scope="col">Data de término</th>
+      <th scope="col">Número de cupons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+      <%= number_to_percentage @promotion.discount_rate, separator: ',', precision: 2 %></th>
+      <td><%= @promotion.code %></td>
+      <td><%= @promotion.expiration_date.strftime('%d/%m/%Y') %></td>
+      <td><%= @promotion.coupon_quantity %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% if @promotion.coupons.empty? %>
+  <%= link_to 'Emitir cupons', generate_coupons_promotion_path(@promotion), method: :post %>
+<% else %>
+
+    <h2>Cupons</h2>
+  <%= render @promotion.coupons %>
+<% end %>
+</div>

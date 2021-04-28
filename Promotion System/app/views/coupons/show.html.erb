@@ -1,0 +1,8 @@
+<div class="container">
+<% if @coupon.nil? %>
+  <%= 'Esse cupom não está cadastrado.' %>
+<% else %>
+    <p><b>Número do Cupom:</b> <%= @coupon.code %></p><hr>
+    <h5><%= link_to 'Ver todos os cupons', @coupon, class: "btn btn-default" %></h5>
+<% end %>
+</div>
